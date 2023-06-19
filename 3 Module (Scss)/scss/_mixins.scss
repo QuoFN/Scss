@@ -1,0 +1,29 @@
+@mixin center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin cent($top: 50, $left: 50) {
+    position: absolute;
+    top: #{$top + "%"};
+    left: #{$left + "%"};
+    transform: translate(-50%, -50%);
+}
+
+%poscenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+%visible {
+    opacity: 0;
+    visibility: hidden;
+}
+
+%pad {
+    padding: 0 9px 20px 1em;
+    margin: 0;
+}

@@ -1,0 +1,123 @@
+@import "reset";
+@import "vars";
+@import "mixins";
+
+body {
+    background-color: $colorBg;
+    
+}
+
+@media (max-width: $mobile) {
+
+    .block {
+        background-color: #232ccc;
+    }
+}
+
+
+.test {
+    background: {
+        color: #433ccc;
+        repeat: no-repeat;
+        image: cover;
+    }
+
+    .dev & {
+        display: block;
+    }
+}
+
+// ============================
+.header {
+    display: block;
+
+    &__inner {
+        display: flex;
+        justify-content: center;
+    }
+
+    &__grid {
+        display: grid;
+    }
+
+    &__beer {
+        font-size: 23px;
+        &--color--gray {
+            color: #777;
+        }
+    }
+
+    &:last-child {
+        @extend %pad;
+    }
+}
+// ===========================
+
+// ========================
+
+.main {
+    display: block;
+    font-size: 1rem;
+    @extend %poscenter;
+
+    &__inner {
+        display: flex;
+
+        &--color--gray {
+            color: #777;
+        }
+    }
+
+    &__bmw {
+        color: $primaryColor;
+        
+    }
+}
+
+// =============================
+.container {
+    max-width: max-content;
+    color: $primaryColor;
+}
+
+.cfwfrw {
+    @include center;
+    @extend %poscenter;
+}
+
+.beaches {
+    &::after {
+        display: block;
+        @extend %visible;
+    }
+}
+
+.slider {
+    &::before {
+        @include cent(30, 10);
+    }
+
+    &__inner {
+        @include center;
+    }
+
+    &__row {
+        width: 264px / 1100px * 100%;
+    }
+}
+
+.contain {
+    font-size: 3em;
+    @include center;
+    @include cent;
+
+    li {
+        color: $primaryColor;
+        margin-right: 1.5rem;
+        white-space: nowrap;
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
